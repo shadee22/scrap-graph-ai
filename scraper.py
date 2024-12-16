@@ -109,3 +109,6 @@ if __name__ == "__main__":
                 st.download_button(label=f"Download {file}", data=f, file_name=file, mime="text/plain")
     else:
         st.info("No .txt files found in the current directory.")
+
+# RUN COMMAND
+#  python3 -m streamlit run scraper.py
