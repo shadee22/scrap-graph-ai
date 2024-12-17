@@ -1,10 +1,17 @@
 import os
+import subprocess
 import json
 import nest_asyncio
 from dotenv import load_dotenv
 from scrapegraphai.graphs import SmartScraperGraph
 import streamlit as st
 import datetime
+
+# Run setup.sh to install Playwright browsers if not already set up
+if not os.path.exists("setup_complete.txt"):
+    subprocess.run(["bash", "setup.sh"], check=True)
+    with open("setup_complete.txt", "w") as f:
+        f.write("Setup Complete")
 
 # Apply nest_asyncio for Jupyter/IPython environments
 nest_asyncio.apply()
